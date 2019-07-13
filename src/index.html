@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+</head>
+<body>
+<div id="container">
+
+</div>
+
+<script>
+  Array.prototype.removeDead = function(){
+
+    let i = 0;
+    for(let j = 0; j < this.length; j++){
+      let elem = this[j];
+      if(!elem.kill){
+        this[i++] = elem;
+      }
+    }
+
+    this.length = i;
+  };
+
+  Array.prototype.remove = function(elem){
+    let i = this.indexOf(elem);
+    this.splice(i, 1);
+  }
+</script>
+
+<script type="x-shader/x-vertex" id="shader-vs">
+    attribute vec4 a_position;
+    attribute vec2 a_texcoord;
+
+    uniform mat4 u_matrix;
+
+    varying vec2 v_texcoord;
+
+    void main() {
+       gl_Position = u_matrix * a_position;
+       v_texcoord = a_texcoord;
+    }
+</script>
+
+<script type="x-shader/x-fragment" id="shader-fs">
+    precision mediump float;
+    varying vec2 v_texcoord;
+    uniform sampler2D u_texture;
+
+    void main() {
+       gl_FragColor = texture2D(u_texture, v_texcoord);
+    }
+</script>
+<script src="engine.js"></script>
+<script src="break-out.js" ></script>
+</body>
+</html>

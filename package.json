@@ -1,0 +1,19 @@
+{
+  "name": "breakout.js",
+  "version": "1.0.0",
+  "description": "A breakout clone implemented in javascript",
+  "main": "game.js",
+  "scripts": {
+    "start": "python3 -m http.server 8080 --directory src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevin2kp/Breakout-clone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kevin2kp/Breakout-clone/issues"
+  },
+  "homepage": "https://github.com/Kevin2kp/Breakout-clone#readme"
+}
