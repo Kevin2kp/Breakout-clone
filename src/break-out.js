@@ -227,7 +227,6 @@ function hitBlock(ball, block) {
 Add the objects to the engine / world
  ------------------------------------------------------------------------------*/
 
-engine.renderer.setBackground('bg.jpg');
 engine.renderer.setScale(500 / 21, 500 / 30);
 engine.addCollider(ball.type, paddle.type);
 engine.addCollider(ball.type, blocks[0].type, hitBlock);
@@ -239,15 +238,15 @@ engine.add(fpsCounter);
 /*-------------------------------------------------------------------------------
 Load the assets(images) that the game objects will be using
  ------------------------------------------------------------------------------*/
-
-engine.load.image('ball', 'ball.png');
-engine.load.image('paddle', 'paddle.png');
-engine.load.image('block-blue', 'block-blue.png');
-engine.load.image('block-blue-hit', 'block-blue-hit.png');
-engine.load.image('block-red', 'block-red.png');
-engine.load.image('block-red-hit', 'block-red-hit.png');
-engine.load.image('block-green', 'block-green.png');
-engine.load.image('block-green-hit', 'block-green-hit.png');
+engine.renderer.setBackground('assets/bg.jpg');
+engine.load.image('ball', 'assets/ball.png');
+engine.load.image('paddle', 'assets/paddle.png');
+engine.load.image('block-blue', 'assets/block-blue.png');
+engine.load.image('block-blue-hit', 'assets/block-blue-hit.png');
+engine.load.image('block-red', 'assets/block-red.png');
+engine.load.image('block-red-hit', 'assets/block-red-hit.png');
+engine.load.image('block-green', 'assets/block-green.png');
+engine.load.image('block-green-hit', 'assets/block-green-hit.png');
 engine.on(Engine.Loader.Events.LOADED_ALL, engine.start.bind(engine));
 
 
